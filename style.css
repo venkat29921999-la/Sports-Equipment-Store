@@ -257,9 +257,6 @@ h1 em,h2 em{background:linear-gradient(90deg,var(--acc),var(--cream),var(--acc))
 /* reviews */
 .rev{transition:translate .5s,box-shadow .5s,border-color .5s,transform .4s}
 .rev.on{translate:0 -10px;border-color:var(--acc);box-shadow:0 20px 50px rgba(255,90,31,.2)}
-/* blog */
-.post .pimg::before{content:"\f061";font-family:"Font Awesome 6 Free";font-weight:900;position:absolute;top:50%;left:50%;width:70px;height:70px;margin:-35px;border-radius:50%;background:var(--acc);color:var(--bg);display:grid;place-items:center;z-index:2;scale:0;transition:scale .5s cubic-bezier(.3,1.6,.5,1)}
-.post:hover .pimg::before{scale:1}
 /* contact + footer */
 .info li:first-child i{position:relative}
 .info li:first-child i::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:2px solid var(--acc);animation:rip 2s infinite}
@@ -526,7 +523,7 @@ body.contact{overflow-x:visible}
 .face i{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;border-radius:4px;transition:transform .35s cubic-bezier(.4,2.2,.5,1)}
 .face .h{width:6px;height:26%;margin-left:-3px;background:var(--cream)}.face .m{width:4px;height:38%;margin-left:-2px;background:var(--cream)}.face .s{width:2px;height:42%;margin-left:-1px;background:var(--acc)}
 .face b{position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px;border-radius:50%;background:var(--acc)}
-.open{display:inline-flex;gap:8px;align-items:center;padding:8px 20px;border-radius:30px;font-weight:800;border:1px solid var(--line)}.open::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c,#3ddc84);animation:glow2 1.6s infinite}
+.clk .open{display:inline-flex;gap:8px;align-items:center;padding:8px 20px;border-radius:30px;font-weight:800;border:1px solid var(--line)}.clk .open::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c,#3ddc84);animation:glow2 1.6s infinite}
 .hrs{margin:22px 0 28px;display:grid;gap:4px;list-style:none}
 .hrs li{display:flex;justify-content:space-between;padding:12px 16px;border-radius:12px;color:var(--mut);transition:.4s}
 .hrs li.today{background:var(--acc);color:var(--bg);font-weight:800;translate:10px 0}
@@ -709,3 +706,17 @@ body.dash{overflow-x:visible}
  .nav-close:hover,.nav-close:focus-visible{background:var(--acc);color:var(--bg);border-color:var(--acc);rotate:90deg}
  body.lock .burger{visibility:hidden}
 }
+/* ===== Logo fix: header and footer logo on the same line, no box or glow behind it ===== */
+/* 1. The global img{background} rule painted a lighter box behind the transparent logo */
+.logo img,.flogo,.loader img{background:none}
+/* 2. Remove the orange glow on the footer logo (the small zoom on hover stays) */
+.fbrand .flogo-link:hover{filter:none}
+/* 3. Header content now starts on the same left edge as the page container (.wrap) and the footer */
+.header,.header.scrolled{padding-left:max(4%,calc((100% - 1200px)/2));padding-right:max(4%,calc((100% - 1200px)/2))}
+/* 4. Same logo size in header and footer */
+.logo img,.flogo{width:150px;height:auto}
+@media(max-width:600px){.logo img,.flogo{width:120px}}
+
+/* ===== Email reader: sender name and time on separate lines ===== */
+.mh strong,.mh small{display:block}
+.mh small{margin-top:2px}
