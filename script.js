@@ -17,6 +17,14 @@ const getU=()=>{try{return JSON.parse(localStorage.getItem('stk_users')||'[]')}c
 const af=$('#af'),am=$('#amsg'),sb=$('#sb');
 const msg=(t,ok)=>{am.className='amsg show '+(ok?'good':'bad');am.innerHTML=`<i class="fa-solid ${ok?'fa-circle-check':'fa-circle-exclamation'}"></i><span>${t}</span>`;gsap.fromTo(am,{y:-8,opacity:0},{y:0,opacity:1,duration:.4});if(!ok)gsap.fromTo('.au-card',{x:-10},{x:0,duration:.7,ease:'elastic.out(1,.25)'})};
 const busy=on=>{sb.classList.toggle('load',on);sb.disabled=on};
+// Required-field validation (no browser pop-up): every field must be filled before login / sign up goes ahead
+const need=isLogin?[['#em','Please enter your email address.'],['#pw','Please enter your password.']]:[['#nm','Please enter your full name.'],['#em','Please enter your email address.'],['#pw','Please create a password.'],['#pw2','Please confirm your password.'],['#tc','Please accept the Terms and Privacy Policy.']];
+const fErr=need.map(([s])=>{const f=$(s),host=f.closest('.fld,.tc'),p=document.createElement('p');p.setAttribute('role','alert');p.style.cssText='display:none;align-items:center;gap:6px;margin:-8px 4px 14px;font-size:.85rem;font-weight:600;color:#ff8a5c';host.after(p);return p});
+const fShow=(k,t)=>{const f=$(need[k][0]),p=fErr[k];if(f.type!=='checkbox'){f.style.borderColor=t?'#ff5a1f':'';f.style.boxShadow=t?'0 0 0 4px rgba(255,90,31,.18)':''}f.setAttribute('aria-invalid',t?'true':'false');
+ if(t){p.innerHTML='<i class="fa-solid fa-circle-exclamation"></i><span>'+t+'</span>';p.style.display='flex';gsap.fromTo(p,{y:-6,opacity:0},{y:0,opacity:1,duration:.3})}else p.style.display='none'};
+need.forEach(([s],k)=>{const f=$(s);f.addEventListener(f.type==='checkbox'?'change':'input',()=>fShow(k,''))});
+const check=()=>{let first=-1;need.forEach(([s,t],k)=>{const f=$(s),bad=f.type==='checkbox'?!f.checked:!f.value.trim();fShow(k,bad?t:'');if(bad&&first<0)first=k});
+ if(first>=0){am.className='amsg';const f=$(need[first][0]);f.focus();gsap.fromTo(f.closest('.fld,.tc'),{x:-8},{x:0,duration:.5,ease:'elastic.out(1,.3)'});return false}return true};
 const seg=$('.seg');seg.querySelectorAll('input').forEach(r=>r.addEventListener('change',()=>seg.dataset.v=r.value));
 document.querySelectorAll('.eye').forEach(b=>b.onclick=()=>{const i=b.parentElement.querySelector('input'),s=i.type==='password';i.type=s?'text':'password';b.innerHTML=`<i class="fa-regular fa-eye${s?'-slash':''}"></i>`});
 // intro animations
@@ -30,11 +38,11 @@ if(matchMedia('(hover:hover) and (pointer:fine)').matches)$('.au-main').addEvent
 const go=u=>{try{localStorage.setItem('stk_session',JSON.stringify({name:u.name,email:u.email,role:u.role}))}catch(e){}sb.classList.remove('load');sb.classList.add('done');msg('Welcome back! Taking you to your dashboard...',true);gsap.to('.au-card',{y:-40,opacity:0,duration:.6,delay:.9,onComplete:()=>location.href=u.role==='admin'?'admin.html':'user.html'})};
 if(isLogin){
  const q=new URLSearchParams(location.search);if(q.get('registered')){msg('Account created successfully. Please log in.',true);if(q.get('email'))$('#em').value=q.get('email')}
- af.addEventListener('submit',e=>{e.preventDefault();const em=$('#em').value.trim(),role=af.role.value,nm=em?em.split('@')[0].replace(/[._-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase()):(role==='admin'?'Admin':'Member');
+ af.addEventListener('submit',e=>{e.preventDefault();if(!check())return;const em=$('#em').value.trim(),role=af.role.value,nm=em?em.split('@')[0].replace(/[._-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase()):(role==='admin'?'Admin':'Member');
   busy(true);setTimeout(()=>go({name:nm,email:em||'guest@stackly.com',role}),900)});
 }else{
  $('#pw').addEventListener('input',e=>{const v=e.target.value;let s=0;if(v.length>=8)s++;if(/[A-Z]/.test(v)&&/[a-z]/.test(v))s++;if(/\d/.test(v))s++;if(/[^A-Za-z0-9]/.test(v))s++;$('#str').dataset.s=v?s:0});
- af.addEventListener('submit',e=>{e.preventDefault();const n=$('#nm').value.trim()||'New Member',em=$('#em').value.trim(),pw=$('#pw').value;
+ af.addEventListener('submit',e=>{e.preventDefault();if(!check())return;const n=$('#nm').value.trim()||'New Member',em=$('#em').value.trim(),pw=$('#pw').value;
   busy(true);setTimeout(()=>{if(em){const l=getU().filter(x=>x.email!==em.toLowerCase());l.push({name:n,email:em.toLowerCase(),pass:pw,role:af.role.value});try{localStorage.setItem('stk_users',JSON.stringify(l))}catch(x){}}
    sb.classList.remove('load');sb.classList.add('done');msg('Account created! Taking you to login...',true);
    gsap.to('.au-card',{y:-40,opacity:0,duration:.6,delay:.9,onComplete:()=>location.href='login.html?registered=1'+(em?'&email='+encodeURIComponent(em):'')})},900)});
