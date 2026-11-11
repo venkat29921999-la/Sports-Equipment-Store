@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Dashboard | Stackly</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash user" data-role="user">
+<div class="db"><aside class="sb"><a href="user.html" class="logo"><img src="Assest/stackly-logo.webp" alt="Stackly logo"></a><small class="cap">Member menu</small><button class="nv on" data-v="overview"><i class="fa-solid fa-chart-pie"></i><span>Overview</span></button><button class="nv" data-v="inbox"><i class="fa-solid fa-envelope"></i><span>Inbox</span><em class=bdg id=ibdg>0</em></button><button class="nv" data-v="orders"><i class="fa-solid fa-bag-shopping"></i><span>My Orders</span></button><button class="nv" data-v="profile"><i class="fa-solid fa-user-gear"></i><span>Profile</span></button><button class="nv lo" id="lo"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></button></aside>
+<div class="dov"></div>
+<div class="mn"><header class="tb"><button class="ham" aria-label="Menu"><i class="fa-solid fa-bars"></i></button><h1 id="vt">Overview</h1><button class="bell" id="bell" aria-label="Inbox"><i class="fa-solid fa-bell"></i><b id="bb">0</b></button><div class="me"><img class="tav" src="Assest/sq29.webp" alt=""><div><b class="u-name"></b><small>user</small></div></div></header>
+<section class="dv on" data-v="overview"><div class="wel stg"><h2>Welcome back, <em class="u-name"></em></h2><p class="muted">Here is a quick look at your Stackly account.</p></div>
+<div class="kgrid" id="kpis"></div>
+<div class="og"><div class="panel stg"><h4>Monthly activity</h4><div class="bars" id="bars"></div></div><div class="panel ringp stg"><h4>Reward level</h4><div class="ringw"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="50"/><circle class="ring-fg" cx="60" cy="60" r="50"/></svg><b id="rtx">0%</b></div></div></div>
+<div class="panel stg"><h4>Recent activity</h4><ul class="feed" id="feed"></ul></div></section>
+<section class="dv" data-v="inbox"><div class="mtools stg"><div class="tabs" id="mt"><button class="on" data-f="all">All</button><button data-f="unread">Unread</button><button data-f="star">Starred</button></div><div class="msrch"><i class="fa-solid fa-magnifying-glass"></i><input id="mq" placeholder="Search emails..." aria-label="Search emails"></div><button class="btn btn-sm" id="cb"><i class="fa-solid fa-pen"></i> Compose</button></div>
+<form class="panel cmpf" id="cf" hidden onsubmit="return false"><input id="ct" placeholder="To (email)" type="email" required><input id="cs" placeholder="Subject" required><textarea id="cm" rows="4" placeholder="Write your message..." required></textarea><button class="btn btn-sm" style="justify-self:start">Send <i class="fa-solid fa-paper-plane"></i></button></form>
+<div class="mail stg"><div class="mlist" id="ml"></div><div class="mread" id="mr"><div class="empty"><div><i class="fa-regular fa-envelope-open" style="font-size:2.4rem;color:var(--acc)"></i><p>Select an email to read it</p></div></div></div></div></section>
+
+<section class="dv" data-v="orders"><div class="panel stg"><div class="ptop"><h4>My orders</h4><div class="tabs" id="ot"><button class="on" data-f="all">All</button><button data-f="Delivered">Delivered</button><button data-f="Shipped">Shipped</button><button data-f="Processing">Processing</button></div></div><div class="twrap"><table class="tbl"><thead><tr><th>Order</th><th>Item</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead><tbody id="ob"></tbody></table></div></div></section>
+<section class="dv" data-v="profile"><div class="panel stg"><h4>Your profile</h4><form class="pf" id="pf" onsubmit="return false"><label>Full name<input id="pn"></label><label>Email<input id="pe" type="email"></label><label>Phone<input id="pp" placeholder="+91 98765 43210"></label><label>City<input id="pc" placeholder="Chennai"></label><label class="full">Address<textarea id="pa" rows="3" placeholder="Street, area"></textarea></label><button class="btn full" style="justify-content:center">Save changes</button></form></div></section></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login | Stackly</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="auth login">
+<div class="au-top"><a href="index.html" class="logo"><img src="Assest/stackly-logo.webp" alt="Stackly logo"></a><a href="index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Back to home</a></div>
+<div class="au"><aside class="au-side"><img class="bg" src="Assest/sq1.webp" alt="">
+<div class="glass gl1"><i class="fa-solid fa-truck-fast"></i><div><b>25K+</b><small>Orders delivered</small></div></div><div class="glass gl2"><i class="fa-solid fa-star"></i><div><b>4.9 / 5</b><small>Athlete rating</small></div></div>
+<h2 class="rise">Welcome back,<br><em>champion.</em></h2><p class="muted rise">Log in to track orders, manage your gear and talk to our coaches.</p></aside><main class="au-main"><div class="orb2 ob1"></div><div class="orb2 ob2"></div><div class="au-card"><h1>Login</h1><p class="au-sub">Select your role and enter your details.</p><form id="af" novalidate><div class="seg" data-v="user"><i class="thumb"></i><label><input type="radio" name="role" value="user" checked><span><i class="fa-solid fa-user"></i> User</span></label><label><input type="radio" name="role" value="admin"><span><i class="fa-solid fa-user-shield"></i> Admin</span></label></div>
+
+<div class="fld"><i class="fa-regular fa-envelope fic"></i><input type="email" id="em" placeholder=" " autocomplete="email"><label for="em">Email address</label></div>
+<div class="fld"><i class="fa-solid fa-lock fic"></i><input type="password" id="pw" placeholder=" " ><label for="pw">Password</label><button type="button" class="eye" aria-label="Show password"><i class="fa-regular fa-eye"></i></button></div>
+<div class="fp"><a href="404.html">Forgot password?</a></div>
+
+<div class="amsg" id="amsg" role="alert"></div><button class="btn sbtn" id="sb"><span class="t">Login</span><i class="fa-solid fa-circle-notch fa-spin sp"></i><i class="fa-solid fa-check ok"></i></button>
+<p class="alt">New here? <a href="signup.html">Create an account</a></p>
+<p class="hint">Enter any email and password, pick your role, and you will go straight to that dashboard.</p></form></div></main></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

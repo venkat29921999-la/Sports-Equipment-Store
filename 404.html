@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 - Page Not Found | Stackly</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="404.css">
+</head>
+<body>
+<div class="spot" id="spot"></div>
+<header class="top"><a href="index.html" class="logo" aria-label="Stackly home"><img src="Assest/stackly-logo.webp" alt="Stackly"></a></header>
+
+<main class="nf">
+  <span class="tag"><i class="fa-solid fa-triangle-exclamation"></i> Error 404</span>
+  <div class="digits" aria-label="404">
+    <span class="d" data-depth="14">4</span>
+    <span class="ballwrap" data-depth="26"><i class="fa-solid fa-futbol ball" id="ball"></i><b class="shadow" id="shadow"></b></span>
+    <span class="d" data-depth="14">4</span>
+  </div>
+  <h1>Out of <em>bounds!</em></h1>
+  <p class="msg">The page <code id="path">/this-page</code> slipped past the goalpost. It may have been moved, renamed or never existed.</p>
+  <div class="btns">
+    <a href="index.html" class="btn mag"><i class="fa-solid fa-house"></i> Back to Home</a>
+    <button type="button" class="btn ghost mag" id="prev"><i class="fa-solid fa-arrow-left"></i> Back to Previous Page</button>
+  </div>
+</main>
+
+<div class="ticker" aria-hidden="true"><div class="track"><span>PAGE NOT FOUND</span><span>OUT OF BOUNDS</span><span>TRY AGAIN</span><span>PAGE NOT FOUND</span><span>OUT OF BOUNDS</span><span>TRY AGAIN</span><span>PAGE NOT FOUND</span><span>OUT OF BOUNDS</span><span>TRY AGAIN</span><span>PAGE NOT FOUND</span><span>OUT OF BOUNDS</span><span>TRY AGAIN</span></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="404.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Stackly Sports Equipment Store</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="blog">
+<div class="loader"><img src="Assest/stackly-logo.webp" alt="Stackly"></div>
+<header class="header" id="header">
+  <a href="index.html" class="logo"><img src="Assest/stackly-logo.webp" alt="Stackly logo"></a>
+  <nav class="nav" id="nav">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blog.html" class="active">Blog</a><a href="contact.html">Contact</a>
+    <a href="login.html" class="btn btn-sm nav-login"><i class="fa-solid fa-user"></i> Login</a>
+  </nav>
+  <div class="head-right"><a href="login.html" class="btn btn-sm login"><i class="fa-solid fa-user"></i><span>Login</span></a><button class="burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button></div>
+</header>
+
+<!-- 1. Hero -->
+<section class="bl-hero"><div class="wrap"><span class="tag"><i class="fa-solid fa-newspaper"></i> The Stackly Journal</span><h1 class="mask" id="mask">THE PLAYBOOK</h1><p class="muted">Training tips, gear guides and athlete stories.</p>
+<form class="srch" onsubmit="return false"><i class="fa-solid fa-magnifying-glass"></i><input id="q" placeholder="Search articles..." aria-label="Search"><button class="btn btn-sm">Search</button></form></div></section>
+
+<!-- 2. Featured -->
+<section class="sec"><div class="wrap ft"><div class="ftimg"><img src="Assest/sq5.webp" alt="Featured"><div class="blinds"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div><span class="chip">Featured</span><h2>10 Training Habits Of Elite Athletes</h2><p class="muted">Small daily routines separate good athletes from great ones. Here is what the pros actually do before the lights come on.</p><div class="meta"><span><i class="fa-regular fa-calendar"></i>Nov 1, 2026</span><span><i class="fa-regular fa-clock"></i>8 min read</span><span><i class="fa-regular fa-user"></i>Daniel Reyes</span></div><a href="#" class="btn">Read Story <i class="fa-solid fa-arrow-right"></i></a></div></div></section>
+
+<!-- 3. Filter grid -->
+<section class="sec dark" id="posts"><div class="wrap"><div class="head"><span class="tag">Latest</span><h2>Fresh <em>Articles</em></h2></div>
+<div class="filters" id="filters"><span class="pill"></span><button data-f="all" class="on">All</button><button data-f="training">Training</button><button data-f="nutrition">Nutrition</button><button data-f="gear">Gear</button><button data-f="stories">Stories</button></div>
+<div class="pgrid"><article class="post bp" data-c="training"><div class="pimg"><img src="Assest/sq13.webp" alt="Build A Home Gym On A Budget"><span class="chip cat">Training</span></div><small><i class="fa-regular fa-calendar"></i> Oct 28, 2026 · 6 min read</small><h4>Build A Home Gym On A Budget</h4><a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a></article><article class="post bp" data-c="nutrition"><div class="pimg"><img src="Assest/sq4.webp" alt="Match Day Meals That Fuel Wins"><span class="chip cat">Nutrition</span></div><small><i class="fa-regular fa-calendar"></i> Oct 22, 2026 · 5 min read</small><h4>Match Day Meals That Fuel Wins</h4><a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a></article><article class="post bp" data-c="gear"><div class="pimg"><img src="Assest/sq11.webp" alt="How To Pick The Right Running Shoes"><span class="chip cat">Gear</span></div><small><i class="fa-regular fa-calendar"></i> Oct 15, 2026 · 7 min read</small><h4>How To Pick The Right Running Shoes</h4><a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a></article><article class="post bp" data-c="training"><div class="pimg"><img src="Assest/sq5.webp" alt="Interval Plans For Faster 5Ks"><span class="chip cat">Training</span></div><small><i class="fa-regular fa-calendar"></i> Oct 08, 2026 · 8 min read</small><h4>Interval Plans For Faster 5Ks</h4><a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a></article><article class="post bp" data-c="stories"><div class="pimg"><img src="Assest/sq6.webp" alt="From Bench To Captain"><span class="chip cat">Stories</span></div><small><i class="fa-regular fa-calendar"></i> Sep 30, 2026 · 4 min read</small><h4>From Bench To Captain</h4><a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a></article><article class="post bp" data-c="gear"><div class="pimg"><img src="Assest/sq9.webp" alt="Racquet Tension Explained"><span class="chip cat">Gear</span></div><small><i class="fa-regular fa-calendar"></i> Sep 21, 2026 · 5 min read</small><h4>Racquet Tension Explained</h4><a href="#">Read more <i class="fa-solid fa-arrow-right"></i></a></article></div><p class="none">No articles found.</p></div></section>
+
+<!-- 4. Trending -->
+<section class="sec"><div class="wrap"><div class="head"><span class="tag">Trending</span><h2>Most <em>Read</em></h2></div><ol class="trend"><li class="tr"><b>01</b><div><h4>The 20-Minute Full Body Routine</h4><small>Training · 18K reads</small></div><img class="th" src="Assest/sq14.webp" alt=""><button type="button" class="btn btn-sm tr-btn" onclick="location.href='404.html'">Read <i class="fa-solid fa-arrow-right"></i></button></li><li class="tr"><b>02</b><div><h4>Why Your Shoes Matter More Than You Think</h4><small>Gear · 14K reads</small></div><img class="th" src="Assest/sq11.webp" alt=""><button type="button" class="btn btn-sm tr-btn" onclick="location.href='404.html'">Read <i class="fa-solid fa-arrow-right"></i></button></li><li class="tr"><b>03</b><div><h4>Pre-Game Nutrition Cheat Sheet</h4><small>Nutrition · 12K reads</small></div><img class="th" src="Assest/sq4.webp" alt=""><button type="button" class="btn btn-sm tr-btn" onclick="location.href='404.html'">Read <i class="fa-solid fa-arrow-right"></i></button></li><li class="tr"><b>04</b><div><h4>Swim Faster With Better Breathing</h4><small>Training · 9K reads</small></div><img class="th" src="Assest/sq7.webp" alt=""><button type="button" class="btn btn-sm tr-btn" onclick="location.href='404.html'">Read <i class="fa-solid fa-arrow-right"></i></button></li><li class="tr"><b>05</b><div><h4>Cycling Gear Every Beginner Needs</h4><small>Gear · 8K reads</small></div><img class="th" src="Assest/sq8.webp" alt=""><button type="button" class="btn btn-sm tr-btn" onclick="location.href='404.html'">Read <i class="fa-solid fa-arrow-right"></i></button></li></ol></div><div class="pv"><img alt=""></div></section>
+
+<!-- 5. Authors -->
+<section class="sec dark ov"><div class="wrap"><div class="head"><span class="tag">Authors</span><h2>Meet The <em>Writers</em></h2></div><div class="fan"><div class="pol"><img src="Assest/sq19.webp" alt="Daniel Reyes"><b>Daniel Reyes</b><small>48 articles</small></div><div class="pol"><img src="Assest/sq20.webp" alt="Sara Lin"><b>Sara Lin</b><small>36 articles</small></div><div class="pol"><img src="Assest/sq21.webp" alt="Maya Collins"><b>Maya Collins</b><small>29 articles</small></div><div class="pol"><img src="Assest/sq22.webp" alt="Priya Nair"><b>Priya Nair</b><small>22 articles</small></div></div></div></section>
+
+<!-- 6. Stories (3D ring) -->
+<section class="sec ov"><div class="wrap"><div class="head"><span class="tag">Stories</span><h2>Spin Through <em>Stories</em></h2><p class="muted">Drag the ring, or simply scroll and watch it spin.</p></div></div>
+<div class="stage3d" id="stage3d"><div class="cyl"><figure class="c3" style="--i:0"><img src="Assest/sq10.webp" alt=""><figcaption><small>Athlete Story</small><h4>Rising Above The Injury</h4></figcaption></figure><figure class="c3" style="--i:1"><img src="Assest/sq12.webp" alt=""><figcaption><small>Community</small><h4>Sunday League Heroes</h4></figcaption></figure><figure class="c3" style="--i:2"><img src="Assest/sq9.webp" alt=""><figcaption><small>Behind The Scenes</small><h4>Inside Our Workshop</h4></figcaption></figure><figure class="c3" style="--i:3"><img src="Assest/sq2.webp" alt=""><figcaption><small>Training</small><h4>A Day With The Squad</h4></figcaption></figure><figure class="c3" style="--i:4"><img src="Assest/sq5.webp" alt=""><figcaption><small>Journey</small><h4>Zero To Marathon</h4></figcaption></figure></div></div></section>
+
+<!-- 7. Newsletter -->
+<section class="sec dark nl"><div class="wrap"><div class="env" id="env"><div class="letter"><i class="fa-solid fa-futbol"></i><b>Weekly Playbook</b><small>Tips in your inbox</small></div><div class="body"></div><div class="flap"></div></div><span class="tag">Newsletter</span><h2>Join <em>The Team</em></h2><p class="muted">One email a week. No spam, only game-changing tips.</p><form class="sub" onsubmit="return false"><input type="email" placeholder="Enter your email" required><button class="btn">Subscribe</button></form></div></section>
+
+<footer class="footer"><div class="wrap fgrid">
+  <div class="fbrand"><a href="index.html" class="flogo-link" aria-label="Stackly - back to home"><img src="Assest/stackly-logo.webp" alt="Stackly" class="flogo"></a><p class="muted">Premium sports equipment for every athlete, every level.</p></div>
+  <div><h5>Links</h5><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="blog.html">Blog</a></div>
+  <div><h5>Shop</h5><a href="404.html">Football</a><a href="404.html">Fitness</a><a href="404.html">Cycling</a><a href="404.html">Best Sellers</a></div>
+  <div><h5>Contact</h5><ul class="fcontact"><li><i class="fa-solid fa-location-dot"></i> 24 Marina Road, Chennai, India</li><li><i class="fa-solid fa-phone"></i> +91 98765 43210</li><li><i class="fa-solid fa-envelope"></i> hello@stackly.com</li><li><i class="fa-regular fa-clock"></i> Mon - Sat: 9AM - 8PM</li></ul></div>
+  <div><h5>Follow</h5><div class="social"><a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div></div>
+</div><p class="copy">© 2026 Stackly. All rights reserved.</p></footer>
+<button class="top" id="top"><i class="fa-solid fa-arrow-up"></i></button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
